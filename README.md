@@ -1,4 +1,4 @@
-# CHIPS (Cookies Having Independent Partitioned State)
+# 🍪 CHIPS (Cookies Having Independent Partitioned State)
 
 Is a privacy sandbox initiative to prevent the usage of third-party cookies for
 cross-site tracking.
@@ -33,10 +33,18 @@ docker-compose up -d
 
 ## How to test
 
+#### 🧪 Third party cookies allowed
+
 - With third-party cookies enabled go to Site A and set a cookie using Site C (via the iframe)
 - Check that the cookie set on Site A is also available when you navigate to Site B or Site C
+
+#### 🧪 Third party cookies blocked
 
 - With third-party cookies disabled go to Site A and set a cookie using Site C (via the iframe)
   - If you don't check the **Partitioned** checkbox, no cookie will be set
   - If you check the **Partitioned** checkbox, a cookie will be set
 - Check that the cookie set on Site A is not available when you navigate to Site B or Site C
+
+## Notes
+
+- CHIPS only work using secure connections, so make sure to access the websites using `https`
