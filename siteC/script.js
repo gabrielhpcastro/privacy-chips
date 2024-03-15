@@ -10,9 +10,9 @@ function setCookie(event) {
   }
 
   if (cookiePartitioned === 'on') {
-    document.cookie = `${cookieName}=${cookieValue}; Secure; Partitioned;`;
+    document.cookie = `__Host-${cookieName}=${cookieValue}; Path=/; SameSite=None; Secure; Partitioned;`;
   } else {
-    document.cookie = `${cookieName}=${cookieValue}`;
+    document.cookie = `${cookieName}=${cookieValue}; Path=/; SameSite=None; Secure;`;
   }
   alert('Cookie created!');
 
