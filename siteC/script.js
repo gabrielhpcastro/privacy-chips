@@ -9,7 +9,11 @@ function setCookie(event) {
     return;
   }
 
-  document.cookie = `${cookieName}=${cookieValue}${cookiePartitioned === 'on' ? '; Partitioned' : ''}`;
+  if (cookiePartitioned === 'on') {
+    document.cookie = `${cookieName}=${cookieValue}; Secure; Partitioned;`;
+  } else {
+    document.cookie = `${cookieName}=${cookieValue}`;
+  }
   alert('Cookie created!');
 
   readCookies();
